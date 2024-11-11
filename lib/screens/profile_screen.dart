@@ -1,10 +1,6 @@
-import 'package:tixtrade/utils/app_layout.dart';
-import 'package:tixtrade/widgets/column_layout.dart';
-import 'package:tixtrade/widgets/layout_builder_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../utils/app_styles.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -12,55 +8,50 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Styles.bgColor,
+      backgroundColor: Colors.white,
       body: ListView(
-        padding: EdgeInsets.symmetric(
-            horizontal: AppLayout.getWidth(20),
-            vertical: AppLayout.getHeight(20)),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
-          Gap(AppLayout.getHeight(40)),
+          const Gap(40),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: AppLayout.getHeight(86),
-                width: AppLayout.getWidth(86),
+                height: 86,
+                width: 86,
                 decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(10)),
+                    borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/img_1.png'))),
               ),
-              Gap(AppLayout.getHeight(10)),
+              const Gap(10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Book Tickets',
-                    style: Styles.headLineStyle1,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Gap(AppLayout.getHeight(2)),
+                  const Gap(2),
                   Text('New-York',
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500)),
-                  Gap(AppLayout.getHeight(8)),
+                  const Gap(8),
                   Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: AppLayout.getHeight(3),
-                        vertical: AppLayout.getWidth(3)),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                     decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(AppLayout.getHeight(100)),
+                      borderRadius: BorderRadius.circular(100),
                       color: const Color(0xfffef4f3),
                     ),
                     child: Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(AppLayout.getWidth(3)),
+                          padding: const EdgeInsets.all(3),
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Color(0xff526799),
@@ -71,14 +62,14 @@ class ProfileScreen extends StatelessWidget {
                             size: 15,
                           ),
                         ),
-                        Gap(AppLayout.getHeight(5)),
+                        const Gap(5),
                         const Text(
                           'Premium Tears',
                           style: TextStyle(
                               color: Color(0xff526799),
                               fontWeight: FontWeight.w600),
                         ),
-                        Gap(AppLayout.getHeight(5)),
+                        const Gap(5),
                       ],
                     ),
                   )
@@ -91,10 +82,10 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       print('you are tapped');
                     },
-                    child: Text(
+                    child: const Text(
                       'Edit',
-                      style: Styles.textStyle.copyWith(
-                          color: Styles.primaryColor,
+                      style: TextStyle(
+                          color: Color(0xff526799),
                           fontWeight: FontWeight.w300),
                     ),
                   )
@@ -102,62 +93,63 @@ class ProfileScreen extends StatelessWidget {
               )
             ],
           ),
-          Gap(AppLayout.getHeight(8)),
+          const Gap(8),
           Divider(
             color: Colors.grey.shade300,
           ),
-          Gap(AppLayout.getHeight(8)),
+          const Gap(8),
           Stack(
             children: [
               Container(
-                height: AppLayout.getHeight(90),
+                height: 90,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Styles.primaryColor,
-                  borderRadius: BorderRadius.circular(AppLayout.getHeight(18)),
+                  color: const Color(0xff526799),
+                  borderRadius: BorderRadius.circular(18),
                 ),
               ),
               Positioned(
                   right: -45,
                   top: -40,
                   child: Container(
-                    padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                    padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.transparent,
-                        border:
-                            Border.all(width: 18, color: const Color(0xff264cd2))),
+                        border: Border.all(
+                            width: 18, color: const Color(0xff264cd2))),
                   )),
               Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: AppLayout.getHeight(25),
-                    vertical: AppLayout.getHeight(20)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       maxRadius: 25,
                       backgroundColor: Colors.white,
                       child: Icon(
                         FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
-                        color: Styles.primaryColor,
+                        color: Color(0xff526799),
                         size: 27,
                       ),
                     ),
-                    Gap(AppLayout.getWidth(12)),
+                    const Gap(12),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'You\'ve got a new award',
-                          style: Styles.headLineStyle2.copyWith(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 18),
                         ),
                         Text(
-                          'You have 95 flights in a  year',
-                          style: Styles.headLineStyle2.copyWith(
+                          'You have 95 flights in a year',
+                          style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white.withOpacity(0.9),
                               fontSize: 16),
@@ -169,99 +161,120 @@ class ProfileScreen extends StatelessWidget {
               )
             ],
           ),
-          Gap(AppLayout.getHeight(25)),
-          Text(
+          const Gap(25),
+          const Text(
             'Accumulated Miles',
-            style: Styles.headLineStyle2,
+            style: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           Column(
             children: [
-              Gap(AppLayout.getHeight(15)),
-              Text(
+              const Gap(15),
+              const Text(
                 '192802',
                 style: TextStyle(
                     fontSize: 45,
-                    color: Styles.textColor,
+                    color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
-              Gap(AppLayout.getHeight(20)),
-              Row(
+              const Gap(20),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Miles Accrued',
-                    style: Styles.headLineStyle4.copyWith(fontSize: 16),
+                    style: TextStyle(fontSize: 16),
                   ),
                   Text(
                     '23 May 2021',
-                    style: Styles.headLineStyle4.copyWith(fontSize: 16),
+                    style: TextStyle(fontSize: 16),
                   ),
                 ],
               ),
-
-              Gap(AppLayout.getHeight(20)),
-              Divider(color: Colors.grey.shade300,),
-
-              Row(
+              const Gap(20),
+              Divider(
+                color: Colors.grey.shade300,
+              ),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppColumnLayout(
-                    firstText: '23 042',
-                    secondText: 'Miles',
-                    alignment: CrossAxisAlignment.start,
-                    isColor: true,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('23 042',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Miles', style: TextStyle(color: Colors.grey)),
+                    ],
                   ),
-                  AppColumnLayout(
-                    firstText: 'Airline CO',
-                    secondText: 'Received From',
-                    alignment: CrossAxisAlignment.end,
-                    isColor: true,
-                  )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('Airline CO',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Received From',
+                          style: TextStyle(color: Colors.grey)),
+                    ],
+                  ),
                 ],
               ),
-              Gap(AppLayout.getHeight(12)),
-              const AppLayoutBuilderWidget(sections: 12, isColor: false,),
-              Gap(AppLayout.getHeight(12)),
-              Row(
+              const Gap(12),
+              Divider(
+                color: Colors.grey.shade300,
+              ),
+              const Gap(12),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppColumnLayout(
-                    firstText: '24',
-                    secondText: 'Miles',
-                    alignment: CrossAxisAlignment.start,
-                    isColor: true,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('24', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Miles', style: TextStyle(color: Colors.grey)),
+                    ],
                   ),
-                  AppColumnLayout(
-                    firstText: 'MacDonald\'s',
-                    secondText: 'Received From',
-                    alignment: CrossAxisAlignment.end,
-                    isColor: true,
-                  )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('MacDonald\'s',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Received From',
+                          style: TextStyle(color: Colors.grey)),
+                    ],
+                  ),
                 ],
               ),
-              Gap(AppLayout.getHeight(12)),
-              const AppLayoutBuilderWidget(sections: 12, isColor: false,),
-              Gap(AppLayout.getHeight(12)),
-              Row(
+              const Gap(12),
+              Divider(
+                color: Colors.grey.shade300,
+              ),
+              const Gap(12),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  AppColumnLayout(
-                    firstText: '53 340',
-                    secondText: 'Miles',
-                    alignment: CrossAxisAlignment.start,
-                    isColor: true,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('53 340',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Miles', style: TextStyle(color: Colors.grey)),
+                    ],
                   ),
-                  AppColumnLayout(
-                    firstText: 'Exuma',
-                    secondText: 'Received From',
-                    alignment: CrossAxisAlignment.end,
-                    isColor: true,
-                  )
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('Exuma',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Received From',
+                          style: TextStyle(color: Colors.grey)),
+                    ],
+                  ),
                 ],
               ),
-              Gap(AppLayout.getHeight(24)),
-              Text('How to get more miles', style: Styles.headLineStyle3.copyWith(color: Styles.primaryColor),)
-
+              const Gap(24),
+              const Text(
+                'How to get more miles',
+                style: TextStyle(fontSize: 16, color: Color(0xff526799)),
+              )
             ],
           )
         ],
