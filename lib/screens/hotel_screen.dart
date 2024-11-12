@@ -46,7 +46,7 @@ class HotelScreen extends StatelessWidget {
           const Gap(5),
           Text(hotel['destination'], style: Styles.headLineStyle3.copyWith(color: Colors.white),),
           const Gap(8),
-          Text("\$${hotel['price']}/night", style: Styles.headLineStyle1.copyWith(color: Styles.kakiColor),),
+          Text("₹${hotel['price']}/night", style: Styles.headLineStyle1.copyWith(color: Styles.kakiColor),),
         ],
       ),
     );

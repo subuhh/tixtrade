@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tixtrade/screens/bottom_bar.dart';
+import 'package:tixtrade/screens/splash_screen.dart';
 import 'package:tixtrade/utils/app_styles.dart';
 
 void main() {
@@ -13,13 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: primary,
       ),
-      home: const BottomBar(),
+      home: const SplashScreen(),
     );
   }
 }

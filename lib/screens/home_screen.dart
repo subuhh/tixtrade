@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tixtrade/screens/ticket_view.dart';
 import 'package:tixtrade/utils/app_info_list.dart';
+import '../model/concert_model.dart';
 import '../utils/app_styles.dart';
+import '../widgets/concert_ticekt_card.dart';
 import '../widgets/double_text_widget.dart';
 import 'hotel_screen.dart';
 
@@ -29,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Good Morning',
+                          'Good Morning, Anubhav',
                           style: Styles.headLineStyle3,
                         ),
                         const Gap(5),
@@ -55,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                 const Gap(25),
                 Container(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: const Color(0xFFF4F6FD),
@@ -76,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Gap(40),
                 const AppDoubleTextWidget(
-                  bigText: 'Upcoming Flights',
+                  bigText: 'Upcoming Flight',
                   smallText: 'View All',
                 ),
               ],
@@ -90,12 +92,13 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               child: Row(
                 children: ticketList
-                    .where((ticket) => ticket != null) // Filter out nulls
+                    // .where((ticket) => ticket != null) // Filter out nulls
                     .map((singleTicket) => TicketView(ticket: singleTicket))
                     .toList(),
               ),
             ),
           ),
+          // ConcertTicketList(tickets: concertTickets),
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -109,13 +112,46 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: hotelList
+              children: (hotelList)
                   .map((singleHotel) => HotelScreen(hotel: singleHotel))
                   .toList(),
             ),
           ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: const AppDoubleTextWidget(
+              bigText: 'Concert',
+              smallText: 'View All',
+            ),
+          ),
+          ConcertTicketList(tickets: concertTickets),
         ],
       ),
     );
   }
 }
+
+final List<ConcertTicket> concertTickets = [
+  ConcertTicket(
+    name: 'Rock Fest 2024',
+    venue: 'Madison Square Garden',
+    date: DateTime(2024, 5, 20),
+    price: 499,
+    imageUrl: 'assets/images/1.jpg',
+  ),
+  ConcertTicket(
+    name: 'Jazz Night',
+    venue: 'Blue Note',
+    date: DateTime(2024, 6, 15),
+    price: 699,
+    imageUrl: 'assets/images/2.jpg',
+  ),
+  ConcertTicket(
+    name: 'EDM Extravaganza',
+    venue: 'Electric Daisy Carnival',
+    date: DateTime(2024, 7, 30),
+    price: 999,
+    imageUrl: 'assets/images/3.jpeg',
+  ),
+];

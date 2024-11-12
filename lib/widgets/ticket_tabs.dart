@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_layout.dart';
-
 class AppTicketTabs extends StatelessWidget {
   final String firstTab;
   final String secondTab;
@@ -9,47 +7,41 @@ class AppTicketTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
+    final size = MediaQuery.of(context).size;
 
     return FittedBox(
       child: Container(
         padding: const EdgeInsets.all(3.5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
+          borderRadius: BorderRadius.circular(50),
           color: Colors.grey.shade300,
         ),
         child: Row(
           children: [
-            //airline tickets
+            // Airline tickets
             Container(
-              padding:
-              EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+              padding: EdgeInsets.symmetric(vertical: 7),
               width: size.width * 0.44,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(
-                    AppLayout.getHeight(50),
-                  ),
+                  left: Radius.circular(50),
                 ),
                 color: Colors.white,
               ),
-              child:  Center(child: Text(firstTab)),
+              child: Center(child: Text(firstTab)),
             ),
 
-            //hotel tickets
+            // Hotel tickets
             Container(
-              padding:
-              EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+              padding: EdgeInsets.symmetric(vertical: 7),
               width: size.width * 0.44,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(
-                    AppLayout.getHeight(50),
-                  ),
+                  right: Radius.circular(50),
                 ),
                 color: Colors.transparent,
               ),
-              child:  Center(
+              child: Center(
                 child: Text(secondTab),
               ),
             ),

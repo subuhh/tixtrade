@@ -1,65 +1,55 @@
 List<Map<String, dynamic>> hotelList = [
   {
     'image': 'one.png',
-    'place': 'Open Space',
-    'destination': 'London',
-    'price': 25
+    'place': 'Beach View Resort',
+    'destination': 'Goa',
+    'price': 3000
   },
   {
     'image': 'two.png',
-    'place': 'Global Will',
-    'destination': 'London',
-    'price': 40
+    'place': 'Mountain Retreat',
+    'destination': 'Manali',
+    'price': 4500
   },
   {
     'image': 'three.png',
-    'place': 'Tallest Building',
-    'destination': 'Dubai',
-    'price': 68
+    'place': 'Skyline Tower',
+    'destination': 'Mumbai',
+    'price': 7000
   },
 ];
 
 List<Map<String, dynamic>> ticketList = [
   {
-    'from': {
-      'code':"NYC",
-      'name':"New-York"
-    },
-    'to': {
-      'code':"LDN",
-      'name':"London"
-    },
-    'flying_time': '8H 30M',
-    'date': "1 MAY",
-    'departure_time':"08:00 AM",
-    "number":23
+    'from': {'code': "DEL", 'name': "Delhi"},
+    'to': {'code': "BOM", 'name': "Mumbai"},
+    'flying_time': '2H 15M',
+    'date': "15 NOV",
+    'departure_time': "10:00 AM",
+    "number": 101
   },
   {
-    'from': {
-      'code':"DK",
-      'name':"Dhaka"
-    },
-    'to': {
-      'code':"SH",
-      'name':"Shanghai"
-    },
-    'flying_time': '4H 20M',
-    'date': "10 MAY",
-    'departure_time':"09:00 AM",
-    "number":45
+    'from': {'code': "BLR", 'name': "Bengaluru"},
+    'to': {'code': "HYD", 'name': "Hyderabad"},
+    'flying_time': '1H 30M',
+    'date': "20 NOV",
+    'departure_time': "06:30 PM",
+    "number": 202
   },
   {
-    'from': {
-      'code':"DXB",
-      'name':"Dubai"
-    },
-    'to': {
-      'code':"AUR",
-      'name':"Abu-Dhabi"
-    },
-    'flying_time': '18H 20M',
-    'date': "17 MAY",
-    'departure_time':"11:00 AM",
-    "number":99
+    'from': {'code': "CCU", 'name': "Kolkata"},
+    'to': {'code': "MAA", 'name': "Chennai"},
+    'flying_time': '2H 00M',
+    'date': "25 NOV",
+    'departure_time': "07:45 AM",
+    "number": 303
+  },
+  {
+    'from': {'code': "AMD", 'name': "Ahmedabad"},
+    'to': {'code': "GOI", 'name': "Goa"},
+    'flying_time': '1H 50M',
+    'date': "28 NOV",
+    'departure_time': "12:00 PM",
+    "number": 404
   },
 ];
