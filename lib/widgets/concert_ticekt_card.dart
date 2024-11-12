@@ -71,7 +71,7 @@ class ConcertTicketCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        '\$${ticket.price}',
+                        '₹${ticket.price}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,

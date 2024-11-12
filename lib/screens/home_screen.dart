@@ -78,14 +78,27 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Gap(40),
                 const AppDoubleTextWidget(
-                  bigText: 'Upcoming Concerts',
+                  bigText: 'Upcoming Flight',
                   smallText: 'View All',
                 ),
               ],
             ),
           ),
           const Gap(15),
-          ConcertTicketList(tickets: concertTickets),
+          Container(
+            height: 200,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 20),
+              child: Row(
+                children: ticketList
+                    // .where((ticket) => ticket != null) // Filter out nulls
+                    .map((singleTicket) => TicketView(ticket: singleTicket))
+                    .toList(),
+              ),
+            ),
+          ),
+          // ConcertTicketList(tickets: concertTickets),
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -104,6 +117,15 @@ class HomeScreen extends StatelessWidget {
                   .toList(),
             ),
           ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: const AppDoubleTextWidget(
+              bigText: 'Concert',
+              smallText: 'View All',
+            ),
+          ),
+          ConcertTicketList(tickets: concertTickets),
         ],
       ),
     );
@@ -115,21 +137,21 @@ final List<ConcertTicket> concertTickets = [
     name: 'Rock Fest 2024',
     venue: 'Madison Square Garden',
     date: DateTime(2024, 5, 20),
-    price: 99.99,
+    price: 499,
     imageUrl: 'assets/images/1.jpg',
   ),
   ConcertTicket(
     name: 'Jazz Night',
     venue: 'Blue Note',
     date: DateTime(2024, 6, 15),
-    price: 59.99,
+    price: 699,
     imageUrl: 'assets/images/2.jpg',
   ),
   ConcertTicket(
     name: 'EDM Extravaganza',
     venue: 'Electric Daisy Carnival',
     date: DateTime(2024, 7, 30),
-    price: 149.99,
+    price: 999,
     imageUrl: 'assets/images/3.jpeg',
   ),
 ];
